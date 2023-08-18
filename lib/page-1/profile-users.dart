@@ -3,8 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
-
-class Scene extends StatelessWidget {
+import 'package:myapp/page-1/home-page.dart';
+import 'package:myapp/page-1/cart.dart';
+class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -43,17 +44,26 @@ class Scene extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                //--------import 'package:myapp/page-1/profile-users.dart';-------
                     Container(
                       // homebUm (44:627)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 56*fem, 0*fem),
                       width: 18*fem,
                       height: 20*fem,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigate to a new screen/page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        },
                       child: Image.asset(
                         'assets/page-1/images/home-2XB.png',
                         width: 18*fem,
                         height: 20*fem,
                       ),
-                    ),
+                    ),),
                     Container(
                       // searchFZK (44:630)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 54.55*fem, 0*fem),
@@ -289,11 +299,19 @@ class Scene extends StatelessWidget {
                       // cartm53 (44:684)
                       width: 16.99*fem,
                       height: 17.33*fem,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigate to a new screen/page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CartScreen()),
+                          );
+                        },
                       child: Image.asset(
                         'assets/page-1/images/cart.png',
                         width: 16.99*fem,
                         height: 17.33*fem,
-                      ),
+                      ),),
                     ),
                   ],
                 ),
@@ -322,6 +340,7 @@ class Scene extends StatelessWidget {
                 ),
               ),
             ),
+            //------input username------------------
             Positioned(
               // iconsaxlinearuserU7s (118:490)
               left: 65.4099121094*fem,
@@ -338,6 +357,7 @@ class Scene extends StatelessWidget {
                 ),
               ),
             ),
+            //------input location------------------
             Positioned(
               // iconsaxlinearlocationK8V (118:492)
               left: 65.3771972656*fem,
@@ -354,6 +374,7 @@ class Scene extends StatelessWidget {
                 ),
               ),
             ),
+            //------input phone number------------------
             Positioned(
               // iconsaxlinearcalln25 (118:495)
               left: 64*fem,
@@ -370,6 +391,7 @@ class Scene extends StatelessWidget {
                 ),
               ),
             ),
+            //------input card------------------
             Positioned(
               // iconsaxlinearcard3ih (118:497)
               left: 64*fem,
@@ -386,6 +408,7 @@ class Scene extends StatelessWidget {
                 ),
               ),
             ),
+            //------input scanbarcode------------------
             Positioned(
               // iconsaxlinearscanbarcodeWcH (118:500)
               left: 64*fem,

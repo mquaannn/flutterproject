@@ -3,6 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/profile-users.dart';
+import 'package:myapp/page-1/home-page.dart';
+import 'package:myapp/page-1/check-out.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -124,12 +127,20 @@ class CartScreen extends StatelessWidget {
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 56*fem, 0*fem),
                       width: 18*fem,
                       height: 20*fem,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigate to a new screen/page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        },
                       child: Image.asset(
                         'assets/page-1/images/home-RsX.png',
                         width: 18*fem,
                         height: 20*fem,
                       ),
-                    ),
+                    ),),
                     Container(
                       // search8dX (20:939)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 54.55*fem, 0*fem),
@@ -156,11 +167,19 @@ class CartScreen extends StatelessWidget {
                       // usereVP (20:944)
                       width: 16*fem,
                       height: 18*fem,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigate to a new screen/page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ProfileScreen()),
+                          );
+                        },
                       child: Image.asset(
                         'assets/page-1/images/user-dSh.png',
                         width: 16*fem,
                         height: 18*fem,
-                      ),
+                      ),),
                     ),
                   ],
                 ),
