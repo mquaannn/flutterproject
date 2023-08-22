@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 // import 'package:myapp/page-1/log-in-sign-in.dart';
 // import 'package:myapp/page-1/sign-in.dart';
-// import 'package:myapp/page-1/home-page.dart';
-// import 'package:myapp/page-1/product-details.dart';
+import 'package:myapp/page-1/home-page.dart';
+import 'package:myapp/page-1/product-details.dart';
 import 'package:myapp/page-1/profile-users.dart';
 import 'package:myapp/page-1/cart.dart';
 import 'package:myapp/page-1/check-out.dart';
 // import 'package:myapp/page-1/component-1.dart';
 // import 'package:myapp/page-1/sneakar-list.dart';
-//
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
 				primarySwatch: Colors.blue,
 			),
 
-			routes: {
+			routes:{
 				'/': (context) => HomeScreen(),
 				'/cart': (context) => CartScreen(),
-
+				'/product-details': (context) => ProductdetailScreen(),
 			},
 		);
 	}
@@ -40,11 +40,12 @@ class HomeScreen extends StatelessWidget {
 				title: Text('Home'),
 			),
 			body: SingleChildScrollView(
-				child: Scene(),
+				child: HomePage(),
 			),
 			floatingActionButton: FloatingActionButton(
 				onPressed: () {
-					Navigator.pushNamed(context, '/cart');
+					//Navigator.pushNamed(context, '/cart');
+					Navigator.pushNamed(context, '/product-details');
 				},
 				child: Icon(Icons.shopping_cart),
 			),

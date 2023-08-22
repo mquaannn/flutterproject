@@ -3,8 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
-
-class Scene extends StatelessWidget {
+import 'package:myapp/page-1/product-details.dart';
+import 'package:myapp/page-1/profile-users.dart';
+import 'package:myapp/page-1/cart.dart';
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -141,11 +143,19 @@ class Scene extends StatelessWidget {
                             // cartoFF (18:140)
                             width: 16.99*fem,
                             height: 17.33*fem,
+                            child: GestureDetector(
+                              onTap: () {
+                                // Navigate to a new screen/page
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => CartScreen()),
+                                );
+                              },
                             child: Image.asset(
                               'assets/page-1/images/cart-iaD.png',
                               width: 16.99*fem,
                               height: 17.33*fem,
-                            ),
+                            ),),
                           ),
                         ],
                       ),
@@ -1248,6 +1258,7 @@ class Scene extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  //--------import 'package:myapp/page-1/profile-users.dart';---------
                   Container(
                     // home5gM (17:122)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 56*fem, 0*fem),
@@ -1259,6 +1270,7 @@ class Scene extends StatelessWidget {
                       height: 20*fem,
                     ),
                   ),
+                  //--------Search---------
                   Container(
                     // searcha7K (17:125)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 54.55*fem, 0*fem),
@@ -1270,6 +1282,7 @@ class Scene extends StatelessWidget {
                       height: 18*fem,
                     ),
                   ),
+                  //--------Heart---------
                   Container(
                     // heartfPf (17:128)
                     margin: EdgeInsets.fromLTRB(0*fem, 0.23*fem, 55.55*fem, 0*fem),
@@ -1281,15 +1294,24 @@ class Scene extends StatelessWidget {
                       height: 18.23*fem,
                     ),
                   ),
+                  //--------import 'package:myapp/page-1/profile-users.dart';---------
                   Container(
                     // userkg1 (17:130)
                     width: 16*fem,
                     height: 18*fem,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to a new screen/page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProfileScreen()),
+                        );
+                      },
                     child: Image.asset(
                       'assets/page-1/images/user-eWM.png',
                       width: 16*fem,
                       height: 18*fem,
-                    ),
+                    ),),
                   ),
                 ],
               ),

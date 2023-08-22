@@ -3,8 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/home-page.dart';
 
-class Scene extends StatelessWidget {
+class ProductdetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -146,12 +147,20 @@ class Scene extends StatelessWidget {
                       margin: EdgeInsets.fromLTRB(0*fem, 0.23*fem, 55.55*fem, 0*fem),
                       width: 20.9*fem,
                       height: 18.23*fem,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigate to a new screen/page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        },
                       child: Image.asset(
                         'assets/page-1/images/heart.png',
                         width: 20.9*fem,
                         height: 18.23*fem,
                       ),
-                    ),
+                    ),),
                     Container(
                       // userzwK (20:688)
                       width: 16*fem,
@@ -1023,3 +1032,39 @@ class Scene extends StatelessWidget {
           );
   }
 }
+// class HomeRoute extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       routes:{
+//         '/': (context) => HomePage(),
+//       },
+//     );
+//   }
+// }
+//
+// class HomeScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Home'),
+//       ),
+//       body: SingleChildScrollView(
+//         child: HomePage(),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           Navigator.pushNamed(context, '/cart');
+//           //Navigator.pushNamed(context, '/product-details');
+//         },
+//         child: Icon(Icons.shopping_cart),
+//       ),
+//     );
+//   }
+// }
